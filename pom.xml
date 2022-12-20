@@ -12,6 +12,7 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
     </properties>
 
     <dependencies>
@@ -33,6 +34,17 @@
             <version>3.23.1</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.3.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.9.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -52,10 +64,35 @@
                 <version>2.12.4</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>${project.basedir}/src/test/resources/sumAndSub.xml</suiteXmlFile>
-                        <suiteXmlFile>${project.basedir}/src/test/resources/divAndMult.xml</suiteXmlFile>
+                        <suiteXmlFile>${project.basedir}/src/test/resources/${suite.xml.file}</suiteXmlFile>
+<!--                        <suiteXmlFile>${project.basedir}/src/test/resources/sumAndSub.xml</suiteXmlFile>-->
+<!--                        <suiteXmlFile>${project.basedir}/src/test/resources/divAndMult.xml</suiteXmlFile>-->
+<!--                        <suiteXmlFile>${project.basedir}/src/test/resources/hw2profile.xml</suiteXmlFile>-->
                     </suiteXmlFiles>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <configLocation>
+                        https://raw.githubusercontent.com/DmitryKhodakovsky/epam-training-center-code-checkers-configurations/main/checkstyle/checkstyle.xml
+                    </configLocation>
+                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                    <consoleOutput>true</consoleOutput>
+                    <failsOnError>true</failsOnError>
+                    <linkXRef>false</linkXRef>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
@@ -69,11 +106,17 @@
         </profile>
         <profile>
             <id>DivAndMult</id>
+            <properties>
+                <suite.xml.file>divAndMult.xml</suite.xml.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>hw2profile</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <suite.xml.file>divAndMult.xml</suite.xml.file>
+                <suite.xml.file>hw2profile.xml</suite.xml.file>
             </properties>
         </profile>
     </profiles>
