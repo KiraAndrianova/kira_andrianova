@@ -35,15 +35,15 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.9.0</version>
+        </dependency>
+        <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>5.3.1</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>3.9.0</version>
         </dependency>
     </dependencies>
 
@@ -65,9 +65,6 @@
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>${project.basedir}/src/test/resources/${suite.xml.file}</suiteXmlFile>
-<!--                        <suiteXmlFile>${project.basedir}/src/test/resources/sumAndSub.xml</suiteXmlFile>-->
-<!--                        <suiteXmlFile>${project.basedir}/src/test/resources/divAndMult.xml</suiteXmlFile>-->
-<!--                        <suiteXmlFile>${project.basedir}/src/test/resources/hw2profile.xml</suiteXmlFile>-->
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
