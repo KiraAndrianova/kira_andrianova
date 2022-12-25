@@ -43,7 +43,7 @@
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>5.3.1</version>
-            <scope>test</scope>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -109,11 +109,17 @@
         </profile>
         <profile>
             <id>hw2profile</id>
+            <properties>
+                <suite.xml.file>hw2profile.xml</suite.xml.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>hw3profile</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <suite.xml.file>hw2profile.xml</suite.xml.file>
+                <suite.xml.file>hw3profile.xml</suite.xml.file>
             </properties>
         </profile>
     </profiles>
