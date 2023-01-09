@@ -14,8 +14,6 @@ public class Exercise1Test extends BaseHW2Test {
     @Test
     public void exercise1Check() {
 
-        loginTest();
-
         //Assert that there are 4 items on the header section are displayed and they have proper texts
         List<String> headerMenuActual = driver.findElements(By.xpath("//*[contains(@class,'m-l8')]/li/a"))
                 .stream().map(WebElement::getText).collect(Collectors.toList());
@@ -27,10 +25,7 @@ public class Exercise1Test extends BaseHW2Test {
         List<WebElement> webElementListImages = driver.findElements(By.className("icons-benefit"));
         softAssertions.assertThat(webElementListImages).hasSize(4);
 
-        softAssertions.assertThat(webElementListImages.get(0).isDisplayed()).isTrue();
-        softAssertions.assertThat(webElementListImages.get(1).isDisplayed()).isTrue();
-        softAssertions.assertThat(webElementListImages.get(2).isDisplayed()).isTrue();
-        softAssertions.assertThat(webElementListImages.get(3).isDisplayed()).isTrue();
+        webElementListImages.forEach(e -> softAssertions.assertThat(e.isDisplayed()).isTrue());
 
         //Assert that there are 4 texts on the Index Page under icons and they have proper text
         List<WebElement> webElementListTexts = driver.findElements(By.className("benefit-txt"));

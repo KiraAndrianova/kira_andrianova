@@ -14,8 +14,6 @@ public class Exercise2Test extends BaseHW2Test {
     @Test
     public void exercise2Check() {
 
-        loginTest();
-
         //step 5 - Open through the header menu Service -> Different Elements Page
         WebElement element = driver.findElement(By.xpath("//*[contains(@class,'m-l8')]/li/a/span"));
         element.click();

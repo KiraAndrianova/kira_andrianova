@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 public class BaseHW2Test {
 
@@ -33,6 +34,7 @@ public class BaseHW2Test {
         driver.navigate().to(baseURL);
     }
 
+    @BeforeMethod
     public void loginTest() {
 
         //step 2 - assert browser title
