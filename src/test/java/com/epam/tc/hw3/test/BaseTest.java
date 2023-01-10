@@ -1,10 +1,7 @@
 package com.epam.tc.hw3.test;
 
-import com.epam.tc.hw3.drivermanager.DriverManager;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import com.epam.tc.hw3.driverutils.DriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 

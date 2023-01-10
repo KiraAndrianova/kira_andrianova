@@ -1,6 +1,6 @@
 package com.epam.tc.hw3.test;
 
-import com.epam.tc.hw3.pages.loginpage.LoginPage;
+import com.epam.tc.hw3.loginpage.LoginPage;
 import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;

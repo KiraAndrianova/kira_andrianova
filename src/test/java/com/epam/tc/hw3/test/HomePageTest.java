@@ -2,9 +2,10 @@ package com.epam.tc.hw3.test;
 
 import static java.util.Arrays.asList;
 
-import com.epam.tc.hw3.pages.homepage.HomePage;
+import com.epam.tc.hw3.homepage.HomePage;
 import java.util.List;
 import org.assertj.core.api.SoftAssertions;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
@@ -22,8 +23,8 @@ public class HomePageTest extends BaseTest {
         softAssertions.assertThat(homePage.getHeader())
                 .containsExactlyElementsOf(expectedHeaderMenu);
 
-        softAssertions.assertThat(homePage.getListImages())
-                .allMatch(t -> t == true)
+        softAssertions.assertThat(homePage.getWebElementListImages())
+                .allMatch(WebElement::isDisplayed)
                 .hasSize(4);
 
         List<String> expectedListTexts = asList("To include good practices\nand ideas from successful\nEPAM project",

@@ -1,4 +1,4 @@
-package com.epam.tc.hw3.pages.leftmenu;
+package com.epam.tc.hw3.leftmenu;
 
 import java.util.List;
 import java.util.stream.Collectors;

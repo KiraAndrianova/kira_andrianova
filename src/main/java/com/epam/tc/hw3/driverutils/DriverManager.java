@@ -1,4 +1,4 @@
-package com.epam.tc.hw3.drivermanager;
+package com.epam.tc.hw3.driverutils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import java.util.concurrent.TimeUnit;

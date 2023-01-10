@@ -1,11 +1,11 @@
 package com.epam.tc.hw3.test;
 
-import com.epam.tc.hw3.pages.differentelementspage.DifferentElementsPage;
-import com.epam.tc.hw3.pages.loginpage.LoginPage;
+import com.epam.tc.hw3.differentelementspage.DifferentElementsPage;
+import com.epam.tc.hw3.driverutils.WebDriverActions;
+import com.epam.tc.hw3.loginpage.LoginPage;
 import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 public class DifferentElementsTest extends BaseTest {
@@ -18,19 +18,17 @@ public class DifferentElementsTest extends BaseTest {
         LoginPage loginPage = PageFactory
                 .initElements(webDriver, LoginPage.class);
 
+        loginPage.login("Roman", "Jdi1234");
+
         DifferentElementsPage differentElementsPage = PageFactory
                 .initElements(webDriver, DifferentElementsPage.class);
 
-        loginPage.login("Roman", "Jdi1234");
-
         differentElementsPage.openDifferentElementsPage();
 
-        WebDriverWait wait = new WebDriverWait(webDriver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(differentElementsPage.getMainContent()));
+        WebDriverActions webDriverActions = new WebDriverActions(webDriver);
+        webDriverActions.WaitUntilCondition(ExpectedConditions.elementToBeClickable(differentElementsPage.getMainContent()));
 
-        for (String winHandle : webDriver.getWindowHandles()) {
-            webDriver.switchTo().window(winHandle);
-        }
+        webDriverActions.switchToOpenedWindow(webDriver);
 
         //step 6 - Select checkboxes Water, Wind
         differentElementsPage.tickCheckbox("Water");

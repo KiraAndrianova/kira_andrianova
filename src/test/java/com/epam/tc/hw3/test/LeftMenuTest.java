@@ -2,7 +2,7 @@ package com.epam.tc.hw3.test;
 
 import static java.util.Arrays.asList;
 
-import com.epam.tc.hw3.pages.leftmenu.LeftMenuPage;
+import com.epam.tc.hw3.leftmenu.LeftMenuPage;
 import java.util.List;
 import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.support.PageFactory;

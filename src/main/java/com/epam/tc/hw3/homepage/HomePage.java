@@ -1,4 +1,4 @@
-package com.epam.tc.hw3.pages.homepage;
+package com.epam.tc.hw3.homepage;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,8 +26,8 @@ public class HomePage {
         return headerMenuActual.stream().map(WebElement::getText).collect(Collectors.toList());
     }
 
-    public List<Boolean> getListImages() {
-        return webElementListImages.stream().map(WebElement::isDisplayed).collect(Collectors.toList());
+    public List<WebElement> getWebElementListImages() {
+        return webElementListImages;
     }
 
     public List<String> getListTexts() {

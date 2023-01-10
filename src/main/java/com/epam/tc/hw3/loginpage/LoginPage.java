@@ -1,4 +1,4 @@
-package com.epam.tc.hw3.pages.loginpage;
+package com.epam.tc.hw3.loginpage;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
